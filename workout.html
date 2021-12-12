@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sonic - Music Player</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="./favicon.png">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./musicplayer.css">
+</head>
+<body>
+    <div class="player-container">
+        <div class="img-container">
+            <img src="./images/workout_1.jpg" alt="Album Art">
+        </div>
+        <h2 id="title">Drive Forever</h2>
+        <h3 id="artist">Sergio Valentino (Russian Remix)</h3>
+        <audio src="./audios/workout_1.mp3"></audio>
+        
+        <!-- Progress -->
+        <div class="progress-container" id="progress-container">
+            <div class="progress" id="progress"></div>
+            <div class="duration-wrapper">
+                <span id="current-time">0:00</span>
+                <span id="duration">9:06</span>
+            </div>
+        </div>
+        <!-- Player Controls -->
+        <div class="player-controls">
+            <i class="fas fa-backward" id="prev" title="Previous"></i>
+            <i class="fas fa-play fa-3x main-button" id="play" title="Play"></i>
+            <i class="fas fa-forward" id="next" title="Next"></i>
+            
+        </div>
+    </div>
+    
+    <!-- Script -->
+    <script src="./workout.js"></script>
+</body>
+</html>
