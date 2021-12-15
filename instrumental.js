@@ -10,6 +10,7 @@ const prevBtn = document.getElementById('prev');
 const playBtn = document.getElementById('play');
 const nextBtn = document.getElementById('next');
 const loopBtn = document.getElementById('loop');
+const shuffleBtn = document.getElementById('shuffle');
 
 const songs = [
     {
@@ -141,16 +142,38 @@ function setProgressBar(e) {
 function loopSong() {
     if (music.loop === false) {
         music.loop = true;
+        loopBtn.style.color = '#00BFA6';
         playSong();
     } else if (music.loop === true) {
         music.loop = false;
+        loopBtn.style.color = '#d7d7d7';
     }
 }
+
+//Shuffle Update & Song
+let onShuffle = false;
+function shuffleUpdate() {
+    if(onShuffle === false) {
+        onShuffle = true;
+        shuffleBtn.style.color = '#00BFA6';
+    } else if( onShuffle === true) {
+        onShuffle = false;
+        shuffleBtn.style.color = '#d7d7d7';
+    }
+}
+
+function shuffleSong() {
+    songIndex = Math.floor(songs.length * Math.random());
+    loadSong(songs[songIndex]);
+    playSong();
+}
+
 
 // Event Listener for Previous Song, Next Song, Progress Update
 prevBtn.addEventListener('click', prevSong);
 nextBtn.addEventListener('click', nextSong);
 music.addEventListener('timeupdate', updateProgressBar);
-music.addEventListener('ended', nextSong);
+music.addEventListener('ended',  () => (onShuffle ? shuffleSong() : nextSong()));
 progressContainer.addEventListener('click', setProgressBar);
 loopBtn.addEventListener('click', loopSong);
+shuffleBtn.addEventListener('click', shuffleUpdate);
