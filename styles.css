@@ -28,6 +28,7 @@ header {
     z-index: 1;
     box-shadow: 2px 2px 10px 4px rgba(17, 17, 17, .3);
 }
+
 .container-fluid {
     padding: 0;
 }
@@ -85,6 +86,7 @@ main {
 }
 
 #faq {
+    padding-top: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -232,8 +234,7 @@ input {
 
 /* FAQ Section */
 #faq {
-    width: 85%;
-    height: 700px;
+    width: 100%;
     margin: 100px auto;
     padding: 0 40px;
     background-color: #191919;
@@ -246,7 +247,7 @@ input {
     font-size: 2.5rem;
     font-weight: 700;
     text-align: center;
-    margin-bottom: 40px;
+    margin: 40px 0 20px;
 }
 
 .collapsible {
@@ -352,5 +353,23 @@ input {
 
     #join, #contact {
         padding-top: 100px;
-    }    
+    }
+
+    .faq-title {
+        font-size: 2rem;
+    }
+
+    .collapsible {
+        padding: 12px;
+        font-size: 1rem;
+    }
+
+    .active, .collapsible:hover {
+        background-color: #555;
+    }
+    
+    .content {
+        padding: 0 10px;
+        font-size: 1rem;
+    }
 }
